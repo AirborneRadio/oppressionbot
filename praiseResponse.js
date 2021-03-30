@@ -1,36 +1,23 @@
-const Hypher = require('hypher')
-const english = require('hyphenation.en-us')
-const h = new Hypher(english)
-const syllable = require('syllable')
-const formattedWordArray = require('./formatter.js')
-
-var wordArray = []
-let praiseOptions = [
-  '@user... We will not tolerate that kind of language',
-  ''
-
-
-]
-
-module.exports = msg => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-  return {
-    msg:
-      fiveSyl1.join(' ') +
-      '\n' +
-      sevenSyl.join(' ') +
-      '\n' +
-      fiveSyl2.join(' '),
-    arrays: { fiveSyl1, sevenSyl, fiveSyl2 }
-  }
+const responses = require('./responses.js')
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
-module.exports = score => {
+function msg(author, message, rng)
+{
 
-  return {
-    score:
-    ''
+  let sendMSG = 'I\'ve decided to praise you.'
+  return sendMSG
+}
+function score(author, message)
+{
+  let words = message.split(" ")
+  if(message.includes('%praise%'))
+  {
+    return 3
   }
+  return 0
+}
+module.exports = {
+  msg,
+  score
 }

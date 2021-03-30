@@ -1,36 +1,28 @@
-const Hypher = require('hypher')
-const english = require('hyphenation.en-us')
-const h = new Hypher(english)
-const syllable = require('syllable')
-const formattedWordArray = require('./formatter.js')
+const responses = require('./responses.js')
 
-var wordArray = []
-let oppressOptions = [
-  '@user... We will not tolerate that kind of language',
-  ''
-
-
-]
-
-module.exports = msg => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-  return {
-    msg:
-      fiveSyl1.join(' ') +
-      '\n' +
-      sevenSyl.join(' ') +
-      '\n' +
-      fiveSyl2.join(' '),
-    arrays: { fiveSyl1, sevenSyl, fiveSyl2 }
-  }
+function msg(author, message, rng)
+{
+  return 'I\'ve decided to oppress you.'
 }
-module.exports = score => {
-
-  return {
-    score:
-    ''
+function delmsg(messageobj, rng)
+{
+  return messageobj.author + ': We don\'t say things like:\n"' + messageobj.content +'"\n on this server!'
+}
+function score(author, message)
+{
+  let words = message.split(" ")
+  if(message.includes('%oppress%'))
+  {
+    return 3
   }
+  if (message.includes('%ban%'))
+  {
+    return 10
+  }
+  return 0
+}
+module.exports = {
+  msg,
+  score,
+  delmsg
 }

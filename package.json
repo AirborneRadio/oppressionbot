@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "discord.js": "^11.2.1",
+    "discord.js": "^11.6.4",
     "dotenv": "^4.0.0",
     "hyphenation.en-us": "^0.2.1",
     "hypher": "^0.2.5",
