@@ -1,5 +1,6 @@
 /*
-  A Haiku bot, it makes haikus from discord chatter.
+  OppressionBot - April Fools 2021
+  based on: brentcobb/haiku-bot
 */
 if (process.env.ENVIRONMENT === 'local') {
   require('dotenv').config()
@@ -8,40 +9,30 @@ if (process.env.ENVIRONMENT === 'local') {
 const http = require('http')
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const syllable = require('syllable')
-
-const writeHaiku = require('./haikuWriter.js')
-const db = require('./db.js')
-
+const oppressResponse = require('./oppressResponse.js')
+const praiseResponse = require('./praiseResponse.js')
 const token = process.env.DISCORD_TOKEN
+
 
 client.on('ready', () => {
   console.log('I am ready!')
 })
 
 client.on('message', message => {
-  console.log('--SYLLABLE COUNT--/s', syllable(message.content))
-  if (syllable(message.content) == '17' && message.author.bot != true) {
-    haiku = writeHaiku(message.content)
-    console.log('haiku', haiku)
+  if (message.member.roles.cache.some(r => r.name === 'Oppressed')) {
+    let oppressionCt = 0
+    let words = message.content.split(" ")
+    oppressionCt = oppressionCt - oppressResponse.score(words)
+    oppressionCT = oppressionCt + praiseResponse.score(words)
 
-    message.channel.send(haiku.msg, { code: true, split: { char: '\n' } })
-
-    var haikuToSave = {
-      _id: message.id,
-      author: message.author.username,
-      initialMessage: message.content,
-      generatedArrays: haiku.arrays,
-      generatedHaiku: haiku.msg,
-      type: 'haiku',
-      date: Date.now()
-    }
-
-    db.saveHaiku(haikuToSave, message.id)
+    if(oppressionCt > 3) { message.channel.send(praiseResponse.msg, { code: true, split: { char: '\n' } }) }
+    if(oppressionCt < -3) { message.channel.send(oppressResponse.msg, { code: true, split: { char: '\n' } }) }
+    if(oppressionCt < -10) { message.channel.send(oppressResponse.delmsg(message.content), { code: true, split: { char: '\n' } }) }
+    if(oppressionCt < -10) { message.delete()}
   }
 })
 
-// Haiku bot enters the arean
+// Actually log into Discord
 client.login(token)
 // pay attention on this port young bot
 http.createServer().listen(process.env.PORT)
