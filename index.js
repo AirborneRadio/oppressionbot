@@ -9,7 +9,10 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const oppressResponse = require('./oppressResponse.js')
 const praiseResponse = require('./praiseResponse.js')
+const settings = require('./settings.js')
 const token = process.env.DISCORD_TOKEN
+
+
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -27,15 +30,15 @@ client.on('message', message => {
     //rng = 1 //sets rng value for testing
     oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
     oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
-    if(oppressionCt >= 3 || oppressionCt <= -3)
+    if(oppressionCt >= settings.praiseThreshold || oppressionCt <= settings.oppressionThreshold)
     {
       let sendMSG = ''
-      if(oppressionCt >= 3) { sendMSG = praiseResponse.msg(message.author, message.content, rng) }
-      else if(oppressionCt <= -10) {
+      if(oppressionCt >= settings.praiseThreshold) { sendMSG = praiseResponse.msg(message.author, message.content, rng) }
+      else if(oppressionCt <= settings.banThreshold) {
         sendMSG = oppressResponse.delmsg(message, rng)
         message.delete()
       }
-      else if(oppressionCt <= -3) { sendMSG = oppressResponse.msg(message.author, message.content, rng) }
+      else if(oppressionCt <= settings.oppressionThreshold) { sendMSG = oppressResponse.msg(message.author, message.content, rng) }
       if(isDev){ sendMSG = (sendMSG + '\n(DEV) RNGVAL: ' + rng + ' | OPSCORE: ' + oppressionCt) }
       sendMSG = sendMSG.replace('%USER%', message.author)
       sendMSG = sendMSG.replace('%MSG%', message.content)
