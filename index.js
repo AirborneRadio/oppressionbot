@@ -19,6 +19,7 @@ function getRandomInt(max) {
 }
 
 client.on('ready', () => {
+  client.user.setStatus('watching for treason')
   console.log('I am ready!')
 })
 
