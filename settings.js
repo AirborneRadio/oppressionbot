@@ -1,9 +1,9 @@
-const oppressionThreshold = -20
-const banThreshold = -50
+const oppressionThreshold = -4
+const banThreshold = -40
 const praiseThreshold = 3
 
 const oppressCost = 2
-const banCost = 40
+const banCost = 20
 const praiseCost = 8
 
 module.exports = {

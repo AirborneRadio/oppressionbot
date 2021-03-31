@@ -27,7 +27,7 @@ client.on('message', message => {
   if (message.member.roles.find(r => r.name === 'Oppressed')) {
     let oppressionCt = 0
     let isDev = message.member.roles.find(r => r.name === 'DEV')
-    let rng = getRandomInt(2) //max value set to lookup table plus one
+    let rng = getRandomInt(41) //max value set to lookup table plus one
     //rng = 1 //sets rng value for testing
     oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
     oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
