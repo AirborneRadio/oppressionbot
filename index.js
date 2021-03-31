@@ -21,45 +21,49 @@ function getRandomInt(max) {
 }
 
 client.on('ready', () => {
-  client.user.setStatus('watching for treason')
+  client.user.setActivity('for poor behaviour', { type: "WATCHING" }) //discord bot status
   console.log('I am ready!')
 })
 
 client.on('message', message => {
   if (message.member.roles.find(r => r.name === 'Oppressed')) {
+    //Create score variable, isDev check, and create rng variable
     let oppressionCt = 0
     let isDev = message.member.roles.find(r => r.name === 'DEV')
     let rng = 0
+    //Duplicate response detection & random number generator
     let opprng = getRandomInt(41) //max value set to oppress lookup table plus one
     let prarng = getRandomInt(26) //max value set to praise lookup table plus one
     let banrng = getRandomInt(16) //max value set to ban lookup table plus one
     if (opprng == lastOppRNG) { opprng = getRandomInt(41) }
     if (prarng == lastPraRNG) { prarng = getRandomInt(41) }
     if (banrng == lastBanRNG) { banrng = getRandomInt(41) }
+    lastOppRNG = opprng
+    lastPraRNG = prarng
+    lastBanRNG = banrng
 
-    //rng = 1 //sets rng value for testing
+    //get message score to determine response
     oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
     oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
     if(oppressionCt >= settings.praiseThreshold || oppressionCt <= settings.oppressionThreshold)
     {
       let sendMSG = ''
-      if(oppressionCt >= settings.praiseThreshold) {
-         sendMSG = praiseResponse.msg(message.author, message.content, prarng) 
-         rng = prarng
+      if(oppressionCt >= settings.praiseThreshold) { //if praise
+         sendMSG = praiseResponse.msg(message.author, message.content, prarng)  //set random praise response
+         rng = prarng //set rng value for dev message
         }
-      else if(oppressionCt <= settings.banThreshold) {
-        sendMSG = oppressResponse.delmsg(message, banrng)
-        message.delete()
-        rng = banrng
+      else if(oppressionCt <= settings.banThreshold) {//if ban
+        sendMSG = oppressResponse.delmsg(message, banrng) //set random ban response
+        message.delete() //delete previous message
+        rng = banrng //set rng value for dev message
       }
-      else if(oppressionCt <= settings.oppressionThreshold) { 
-        sendMSG = oppressResponse.msg(message.author, message.content, opprng) 
-        rng = opprng
+      else if(oppressionCt <= settings.oppressionThreshold) { //if oppress
+        sendMSG = oppressResponse.msg(message.author, message.content, opprng) //set random oppress response 
+        rng = opprng //set rng value for dev message
       }
-      else
-      {
-        rng = 0
-      }
+      else{rng = 0}//I have no idea how you got here but oh well
+
+      //finalize and send message
       if(isDev){ sendMSG = (sendMSG + '\n(DEV) RNGVAL: ' + rng + ' | OPSCORE: ' + oppressionCt) }
       sendMSG = sendMSG.replace('%USER%', message.author)
       sendMSG = sendMSG.replace('%MSG%', message.content)
