@@ -1,21 +1,18 @@
 const responses = require('./responses.js')
+const dict = require('./dictionary.js')
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 function msg(author, message, rng)
 {
-
-  let sendMSG = 'I\'ve decided to praise you.'
-  return sendMSG
+  return responses.getPraise(rng)
 }
 function score(author, message)
 {
+  let out = 0
   let words = message.split(" ")
-  if(message.includes('%praise%'))
-  {
-    return 3
-  }
-  return 0
+  words.forEach(element => (out += dict.isPraise(element)))
+  return out
 }
 module.exports = {
   msg,

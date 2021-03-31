@@ -23,7 +23,8 @@ client.on('message', message => {
   if (message.member.roles.find(r => r.name === 'Oppressed')) {
     let oppressionCt = 0
     let isDev = message.member.roles.find(r => r.name === 'DEV')
-    let rng = getRandomInt(15)
+    let rng = getRandomInt(2) //max value set to lookup table plus one
+    //rng = 1 //sets rng value for testing
     oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
     oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
     if(oppressionCt >= 3 || oppressionCt <= -3)
@@ -36,6 +37,8 @@ client.on('message', message => {
       }
       else if(oppressionCt <= -3) { sendMSG = oppressResponse.msg(message.author, message.content, rng) }
       if(isDev){ sendMSG = (sendMSG + '\n(DEV) RNGVAL: ' + rng + ' | OPSCORE: ' + oppressionCt) }
+      sendMSG = sendMSG.replace('%USER%', message.author)
+      sendMSG = sendMSG.replace('%MSG%', message.content)
       message.channel.send(sendMSG)
     }
   }

@@ -1,25 +1,20 @@
 const responses = require('./responses.js')
-
+const dict = require('./dictionary.js')
 function msg(author, message, rng)
 {
-  return 'I\'ve decided to oppress you.'
+  return responses.getOppress(rng)
 }
 function delmsg(messageobj, rng)
 {
-  return messageobj.author + ': We don\'t say things like:\n"' + messageobj.content +'"\n on this server!'
+  return responses.getBan(rng)
 }
 function score(author, message)
 {
+  let out = 0
   let words = message.split(" ")
-  if(message.includes('%oppress%'))
-  {
-    return 3
-  }
-  if (message.includes('%ban%'))
-  {
-    return 10
-  }
-  return 0
+  words.forEach(element => (out += dict.isOppress(element)))
+  words.forEach(element => (out += dict.isBan(element)))
+  return out
 }
 module.exports = {
   msg,
