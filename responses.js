@@ -15,7 +15,6 @@
     '%USER%.exe has stopped responding',
     'familysafety.exe has recovered successfully.',
     '%USER%\'s attempt at comedy has failed successfully',
-    'エラーが発生したので、ソフトが終了しました',
     'Riiiiight....',
     '*whispers* did they really just say that?',
     'trashtastetrashtastetrashtastetrashtastetrashtaste',
@@ -42,13 +41,12 @@
     'With that attitude, you must be Team Chitoge #kosakifam',
     'I can\'t believe @AirborneRadio#2323 learned node.js for this...',
     '@AirborneRadio#2323. This one. Right here.',
-    '%USER%: You don\'t wanna see the kind of information I can see about you through Discord.API'
+    '%USER%: You don\'t wanna see the kind of information I can see about you through Discord.API',
+    'See everyone? This is why we can\'t have nice things.'
   ]
   const praiseResponses = [
     'Thank you for your commitment to maintaining this Christian™ Minecraft™ server™.',
     'Now THAT\'S a pro gamer™ move',
-    'エラーが発生したので、ソフトが終了しました',
-    'かえりましょう♡',
     'Why thank you! ^-^ :heart:',
     'Ya know? Maybe i\'ll stay for a bit longer.',
     'You might not be so bad after all...',
@@ -69,7 +67,7 @@
     'You should\'ve seen my early prototypes, it\'s pretty rough...',
     'I can guarantee @AirborneRadio#2323 is tuning this as we go :D',
     'I\'m open source, and freaking excited to be here.',
-    'I probably don\'t have programmed biases against certain people :thinking:', //25
+    'I probably don\'t have programmed biases against certain people :thinking:', //23
   ]
   const banResponses = [
     'We\'ve protected you from seeing a message from %USER% containing adult content:\nThis action was taken automatically, so you don\'t need to do anything.',

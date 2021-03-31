@@ -32,9 +32,9 @@ client.on('message', message => {
     let isDev = message.member.roles.find(r => r.name === 'DEV')
     let rng = 0
     //Duplicate response detection & random number generator
-    let opprng = getRandomInt(41) //max value set to oppress lookup table plus one
-    let prarng = getRandomInt(26) //max value set to praise lookup table plus one
-    let banrng = getRandomInt(16) //max value set to ban lookup table plus one
+    let opprng = getRandomInt(40) //max value set to oppress lookup table plus one
+    let prarng = getRandomInt(23) //max value set to praise lookup table plus one
+    let banrng = getRandomInt(15) //max value set to ban lookup table plus one
     if (opprng == lastOppRNG) { opprng = getRandomInt(41) }
     if (prarng == lastPraRNG) { prarng = getRandomInt(41) }
     if (banrng == lastBanRNG) { banrng = getRandomInt(41) }

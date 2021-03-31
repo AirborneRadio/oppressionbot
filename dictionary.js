@@ -5,7 +5,35 @@ const oppressList = [
     'ban',
     '1984',
     'oppress',
-    'blacklist'
+    'blacklist',
+    'when',
+    'where',
+    'what',
+    'why',
+    'this',
+    'that',
+    'then',
+    'i',
+    'want',
+    'trick',
+    'don\'t',
+    'not',
+    'me',
+    'sounds',
+    'quit',
+    'worst',
+    'waiting',
+    'really',
+    'apparently',
+    'never',
+    'make',
+    'no',
+    'not',
+    'this',
+    'ass',
+    'asshole',
+    'sucks',
+    'suck'
 ]
 const banList = [
     'fuck',
@@ -13,6 +41,21 @@ const banList = [
     'swear',
     'connor',
     'kounavi',
+    'spider',
+    'spiders',
+    'snake',
+    'snakes',
+    'free',
+    'china',
+    'slave',
+    'slavery',
+    'motherfucker',
+    'motherfuckers',
+    'chaos',
+    'crap',
+    '-_-',
+    ':/',
+    ':\\',
 
 ]
 const praiseList = [
@@ -31,7 +74,22 @@ const praiseList = [
     'potato',
     'favorite',
     'favourite',
-    'good'
+    'good',
+    'support',
+    'appreciate',
+    'wish',
+    'wishes',
+    'heck',
+    'hekkin',
+    'hecken',
+    'heckin',
+    ':3',
+    ':d',
+    ':p',
+    '^-^',
+    'xd',
+    'champ'
+
 
 ]
 const settings = require('./settings.js')
