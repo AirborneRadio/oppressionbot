@@ -11,7 +11,7 @@ const oppressResponse = require('./oppressResponse.js')
 const praiseResponse = require('./praiseResponse.js')
 const settings = require('./settings.js')
 const token = process.env.DISCORD_TOKEN
-
+let lastRNG = 0
 
 
 function getRandomInt(max) {
@@ -28,6 +28,9 @@ client.on('message', message => {
     let oppressionCt = 0
     let isDev = message.member.roles.find(r => r.name === 'DEV')
     let rng = getRandomInt(41) //max value set to lookup table plus one
+    if (rng = lastRNG) { rng = getRandomInt(41) }
+    if (rng = lastRNG) { rng = getRandomInt(41) }
+    lastRNG = rng
     //rng = 1 //sets rng value for testing
     oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
     oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
