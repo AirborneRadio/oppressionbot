@@ -43,6 +43,7 @@ client.on('message', message => {
     lastPraRNG = prarng
     lastBanRNG = banrng
 
+
     //get message score to determine response
 /*     if(message.content == 'mhs!welcome')
     {
@@ -54,6 +55,7 @@ client.on('message', message => {
     { */
       oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
       oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
+      console.log(message.author + ': ' + message.content + ' (RNG: O:' + opprng + ' P:' + prarng + ' B:' + banrng  + ' | SCORE: ' + oppressionCT + ')')
     //}
 
     if(oppressionCt >= settings.praiseThreshold || oppressionCt <= settings.oppressionThreshold)
@@ -77,6 +79,7 @@ client.on('message', message => {
       if(isDev){ sendMSG = (sendMSG + '\n(DEV) RNGVAL: ' + rng + ' | OPSCORE: ' + oppressionCt) }
       sendMSG = sendMSG.replace('%USER%', message.author)
       sendMSG = sendMSG.replace('%MSG%', message.content)
+
       message.channel.send(sendMSG)
     }
   }
