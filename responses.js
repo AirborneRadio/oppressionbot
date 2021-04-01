@@ -6,7 +6,7 @@
     'Wait a minute, that\'s not a pro gamer move.',
     'I can\'t believe you\'ve done this',
     'Why don\'t you say that to your mother?',
-    '@Kounavi#4974 put you up to this, didn\'t they?',
+    '<@305753443405004802> put you up to this, didn\'t they?',
     'To disable Microsoft™ Family Safety, you need to post a letter to:\n~~Santa Claus~~ Microsoft, \nNorth Pole, \nH0H 0H0, \nCanada \nContaining: Your SIN, Address, Blood Type, and Browser History.',
     'You\'ve been successfully reported.',
     'Are you sure you wanted to post that?',
@@ -22,8 +22,8 @@
     'I\'ve seen calculators with more charm...',
     'I\'m 99.852% sure you\'re not talking about me. Right? :gun:',
     'https://imgur.com/uYivX2n', //slam head into wall
-    '@AirborneRadio#2323 why are you making me listen to this?',
-    '@AirborneRadio#2323 I quit.\nAn unhandled exception has occurred. User does not have permission to use command:\ndiscord.thisuser.guild.leave()',
+    '<@391742118948896778> why are you making me listen to this?',
+    '<@391742118948896778> I quit.\nAn unhandled exception has occurred. User does not have permission to use command:\ndiscord.thisuser.guild.leave()',
     ':GHNOffendPhoenix:',
     ':pstlOh:',
     ':pstlGibbsMood:',
@@ -39,8 +39,8 @@
     'https://tenor.com/view/psyduck-farfetchd-pokemon-gif-17872492',
     'https://tenor.com/view/angry-cat-noises-shout-anime-scream-angry-gif-16517686',
     'With that attitude, you must be Team Chitoge #kosakifam',
-    'I can\'t believe @AirborneRadio#2323 learned node.js for this...',
-    '@AirborneRadio#2323. This one. Right here.',
+    'I can\'t believe <@391742118948896778> learned node.js for this...',
+    '<@391742118948896778>. This one. Right here.',
     '%USER%: You don\'t wanna see the kind of information I can see about you through Discord.API',
     'See everyone? This is why we can\'t have nice things.'
   ]
