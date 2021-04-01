@@ -11,7 +11,8 @@ function delmsg(messageobj, rng)
 function score(author, message)
 {
   let out = 0
-  let words = message.split(" ")
+  let lowerMessage = message.toLowerCase()
+  let words = lowerMessage.split(" ")
   words.forEach(element => (out += dict.isOppress(element)))
   words.forEach(element => (out += dict.isBan(element)))
   return out
