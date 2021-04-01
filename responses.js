@@ -84,7 +84,7 @@
     '%USER%: https://cdn.discordapp.com/attachments/826579609516376074/826847400630681650/1bc8d785b9e3965ec43127224df94f7f.png',
     '%USER%: https://tenor.com/view/anime-smile-waving-knife-gif-16552686',
     'Yea... I\'m just gonna delete that. Don\'t worry, I won\'t tell you who sent that.',
-    '', //15
+    'Rather than waste everyone\'s time, watch this instead %USER%\nhttps://www.youtube.com/watch?v=jQRb4DZnhn8', //15
   ]
   function getOppress(rng){
     return oppressResponses[rng]
