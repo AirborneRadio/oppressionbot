@@ -42,6 +42,7 @@ const banList = [
     'swear',
     'connor',
     'kounavi',
+    '<@305753443405004802>',
     'spider',
     'spiders',
     'snake',
