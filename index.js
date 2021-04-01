@@ -26,7 +26,7 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
-  if (message.member.roles.find(r => r.name === 'Oppressed')) {
+  if (message.member.roles.find(r => r.name === 'Secure')) {
     //Create score variable, isDev check, and create rng variable
     let oppressionCt = 0
     let isDev = message.member.roles.find(r => r.name === 'DEV')
