@@ -31,6 +31,7 @@ client.on('message', message => {
     let oppressionCt = 0
     let isDev = message.member.roles.find(r => r.name === 'DEV')
     let rng = 0
+    let sendMSG = ''
     //Duplicate response detection & random number generator
     let opprng = getRandomInt(40) //max value set to oppress lookup table plus one
     let prarng = getRandomInt(23) //max value set to praise lookup table plus one
@@ -43,11 +44,20 @@ client.on('message', message => {
     lastBanRNG = banrng
 
     //get message score to determine response
-    oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
-    oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
+/*     if(message.content == 'mhs!welcome')
+    {
+      oppressionCt = 0
+      sendMSG = 'Thank you for participating in the Microsoft Family Safety Insider Program!\nThis Discord bot will monitor the chat on this server to protect our impressionable youth.'
+      message.channel.send(sendMSG)
+    }
+    else
+    { */
+      oppressionCt = (oppressionCt - oppressResponse.score(message.author, message.content))
+      oppressionCT = (oppressionCt += praiseResponse.score(message.author, message.content))
+    //}
+
     if(oppressionCt >= settings.praiseThreshold || oppressionCt <= settings.oppressionThreshold)
     {
-      let sendMSG = ''
       if(oppressionCt >= settings.praiseThreshold) { //if praise
          sendMSG = praiseResponse.msg(message.author, message.content, prarng)  //set random praise response
          rng = prarng //set rng value for dev message
