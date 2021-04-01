@@ -72,7 +72,7 @@
   const banResponses = [
     'We\'ve protected you from seeing a message from %USER% containing adult content:\nThis action was taken automatically, so you don\'t need to do anything.',
     'Whoa there. We noticed you used language that doesn\'t belong in this Christian™ Minecraft™ server™:\n%USER%: "%MSG%"\nThat\'s not a pro gamer move...',
-    '%USER%: I\'ve taken the liberty of deleting the message you just sent to protect you:\n "https://totallynotpron.com/funkyshitmyfriendscantknowabout"\nYou\'re very welcome :wink:',
+    '%USER%: I\'ve taken the liberty of deleting the message you just sent to protect you.\nYou\'re very welcome :wink:',
     '%USER%: We\'ve successfully uploaded a list of your most recent Discord DMs:\nhttps://bit.ly/3sFFCqa',
     'I\'m afraid I can\'t let you do that ~~Dave~~%USER%...',
     'Look what you made me do %USER%: https://tenor.com/view/elmo-fire-burning-gif-8869638',
