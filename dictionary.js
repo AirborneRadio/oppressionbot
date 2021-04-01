@@ -89,7 +89,9 @@ const praiseList = [
     ':p',
     '^-^',
     'xd',
-    'champ'
+    'champ',
+    'yee',
+    'haw'
 ]
 const commonList = [
     'a',
