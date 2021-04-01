@@ -32,6 +32,7 @@ const oppressList = [
     'this',
     'ass',
     'asshole',
+    'crap',
     'sucks',
     'suck'
 ]
@@ -52,7 +53,6 @@ const banList = [
     'motherfucker',
     'motherfuckers',
     'chaos',
-    'crap',
     '-_-',
     ':/',
     ':\\',
