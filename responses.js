@@ -59,13 +59,13 @@
     'Fun fact: Most of the memes here have been stolen because my creator is unoriginal AF :rofl:',
     'https://tenor.com/view/dk-nintendo-donkey-kong-gif-4472496',
     'https://tenor.com/view/loli-disguise-police-gif-14116329',
-    'Maybe @AirborneRadio#2323 will let you see my source code :3',
+    'Maybe <@391742118948896778> will let you see my source code :3',
     'You\'re pissing me off. Stop being so nice to me BAKA',
     'Author\'s note: I was super tempted to put the entire list of Minecraft title messages here',
     'Author\'s note: It only took 6 hours to build the framework for this bot, and at least double that for the dictionary and responses :D',
     'If you want me to stay after today, that might be arranged ^-^',
     'You should\'ve seen my early prototypes, it\'s pretty rough...',
-    'I can guarantee @AirborneRadio#2323 is tuning this as we go :D',
+    'I can guarantee <@391742118948896778> is tuning this as we go :D',
     'I\'m open source, and freaking excited to be here.',
     'I probably don\'t have programmed biases against certain people :thinking:', //23
   ]
