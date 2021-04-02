@@ -14,6 +14,9 @@ const token = process.env.DISCORD_TOKEN
 let lastOppRNG = 0
 let lastPraRNG = 0
 let lastBanRNG = 0
+const oppressResponseCT = 40
+const praiseResponseCT = 23
+const banResponseCT = 15
 
 
 function getRandomInt(max) {
@@ -33,12 +36,12 @@ client.on('message', message => {
     let rng = 0
     let sendMSG = ''
     //Duplicate response detection & random number generator
-    let opprng = getRandomInt(40) //max value set to oppress lookup table plus one
-    let prarng = getRandomInt(23) //max value set to praise lookup table plus one
-    let banrng = getRandomInt(15) //max value set to ban lookup table plus one
-    if (opprng == lastOppRNG) { opprng = getRandomInt(41) }
-    if (prarng == lastPraRNG) { prarng = getRandomInt(41) }
-    if (banrng == lastBanRNG) { banrng = getRandomInt(41) }
+    let opprng = getRandomInt(oppressResponseCT) //max value set to oppress lookup table plus one
+    let prarng = getRandomInt(praiseResponseCT) //max value set to praise lookup table plus one
+    let banrng = getRandomInt(banResponseCT) //max value set to ban lookup table plus one
+    if (opprng == lastOppRNG) { opprng = getRandomInt(oppressResponseCT) }
+    if (prarng == lastPraRNG) { prarng = getRandomInt(praiseResponseCT) }
+    if (banrng == lastBanRNG) { banrng = getRandomInt(banResponseCT) }
     lastOppRNG = opprng
     lastPraRNG = prarng
     lastBanRNG = banrng
