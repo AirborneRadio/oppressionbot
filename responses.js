@@ -38,7 +38,7 @@
     'https://tenor.com/view/kaguya-sama-love-is-war-chika-fujiwara-laugh-giggle-evil-laugh-gif-17149742',
     'https://tenor.com/view/psyduck-farfetchd-pokemon-gif-17872492',
     'https://tenor.com/view/angry-cat-noises-shout-anime-scream-angry-gif-16517686',
-    'https://cdn.discordapp.com/attachments/826571917845987398/829767670671867964/dealwithit.gif'
+    'https://cdn.discordapp.com/attachments/826571917845987398/829767670671867964/dealwithit.gif',
     'With that attitude, you must be Team Chitoge #kosakifam',
     'I can\'t believe <@391742118948896778> learned node.js for this...',
     '<@391742118948896778>. This one. Right here.',
